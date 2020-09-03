@@ -15,7 +15,7 @@ if loc.status_code != 200 or people.status_code != 200: # Checks if API is avail
     quit()
 
 
-loc_json = loc.json()       # Convert to from json to Python
+loc_json = loc.json()       # Convert from json to Python
 people_json = people.json()
 
 print("There are", people_json['number'], "people in space right now.")
@@ -24,7 +24,7 @@ if people_json['number'] > 0:   # Display current astronauts
     for i in people_json['people']:
         print(i['name'].ljust(20, " "), " currently onboard", i['craft'])
 
-print("\nThe ISS coordinates as of", datetime.fromtimestamp(loc_json['timestamp'])) # Display first read of a data timestamp
+print("\nThe ISS coordinates as of", datetime.fromtimestamp(loc_json['timestamp'])) # Display first read of a date timestamp
 print("LATITUDE: ", loc_json['iss_position']['latitude'], "\nLONGITUDE:", loc_json['iss_position']['longitude'], '\n')
 
 while 1 < 2: # inf
